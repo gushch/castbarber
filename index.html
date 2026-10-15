@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAST — барбершоп в Рязани</title>
+<meta name="description" content="Барбершоп CAST в Рязани: мужские и детские стрижки, борода, опасное бритьё. Первомайский проспект, 76. Ежедневно 10:00–21:00. Рейтинг 5,0 на Яндекс Картах.">
+<meta name="theme-color" content="#f3f2ee">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wall:#f3f2ee; --wall-2:#e9e7e1; --white:#fff;
+  --ink:#0d0d0d; --ink-2:#1a1a1a; --muted:rgba(13,13,13,.58);
+  --lime:#d4ff3a; --line:rgba(13,13,13,.14);
+  --sans:'Geologica',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  --gutter:clamp(16px,4vw,56px); --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;overflow-x:clip;scroll-behavior:smooth}
+body{background:var(--wall);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+svg{display:block}
+::selection{background:var(--lime);color:var(--ink)}
+.wrap{padding-inline:var(--gutter);max-width:1600px;margin-inline:auto}
+.mono{font-family:var(--mono);font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+.h2{font-weight:800;font-size:clamp(46px,7.6vw,128px);line-height:.92;letter-spacing:-.055em}
+.h2 i{font-style:normal;font-weight:300}
+.lead{font-size:clamp(17px,1.35vw,20px);color:var(--muted);max-width:48ch}
+.mark{background:var(--lime);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:18px 28px;font-weight:600;font-size:16px;line-height:1;white-space:nowrap;position:relative;overflow:hidden;isolation:isolate;transition:color .35s var(--ease)}
+.btn::after{content:"";position:absolute;inset:0;transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease);z-index:-1}
+.btn:hover::after{transform:scaleX(1)}
+.btn--ink{background:var(--ink);color:var(--white)}.btn--ink::after{background:var(--lime)}.btn--ink:hover{color:var(--ink)}
+.btn--lime{background:var(--lime);color:var(--ink)}.btn--lime::after{background:var(--white)}
+.btn--line{box-shadow:inset 0 0 0 1.5px var(--ink)}.btn--line::after{background:var(--ink)}.btn--line:hover{color:var(--white)}
+.btn svg{width:18px;height:18px}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;mix-blend-mode:normal;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(243,242,238,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:74px}
+.logo{font-weight:900;font-size:24px;letter-spacing:-.06em}
+.logo span{display:inline-block;width:.42em;height:.42em;background:var(--lime);border:1.5px solid var(--ink);border-radius:50%;margin-left:3px;vertical-align:.05em}
+.nav__links{display:flex;gap:32px}
+.nav__links a{position:relative}
+.nav__links a::before{content:"";position:absolute;left:-14px;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;background:var(--ink);transform:scale(0);transition:transform .35s var(--ease)}
+.nav__links a:hover::before{transform:scale(1)}
+.nav .btn{padding:14px 22px;font-size:15px}
+@media (max-width:960px){.nav__links{display:none}}
+
+/* hero — gallery wall */
+.hero{min-height:100svh;padding:110px 0 40px;display:flex;flex-direction:column}
+.hero .wrap{flex:1;display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(30px,5vw,90px);align-items:center}
+.hero h1{font-weight:900;font-size:clamp(110px,19vw,330px);line-height:.78;letter-spacing:-.075em;margin-left:-.04em}
+.hero h1 .row{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .row>span{display:inline-block}
+.hero .sub{display:flex;flex-wrap:wrap;gap:10px 22px;margin:30px 0 34px;align-items:center}
+.hero .sub .mono{color:var(--muted)}
+.award{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--white);padding:9px 14px 9px 10px;font-weight:600;font-size:14px}
+.award i{width:22px;height:22px;border-radius:50%;background:var(--lime);display:grid;place-items:center;color:var(--ink);font-style:normal;font-size:12px;font-weight:900}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px}
+.art{position:relative;justify-self:end;width:min(100%,520px)}
+.frame{background:var(--white);padding:clamp(18px,2.4vw,34px);box-shadow:0 1px 0 var(--line),0 40px 80px -40px rgba(0,0,0,.35);position:relative}
+.frame::before{content:"";position:absolute;inset:clamp(8px,1vw,12px);border:1px solid var(--line);pointer-events:none}
+.canvas{aspect-ratio:4/5;background:#ebe8e0;position:relative;overflow:hidden}
+.canvas .c1{position:absolute;width:62%;aspect-ratio:1;border-radius:50%;background:var(--ink);left:-8%;top:10%}
+.canvas .c2{position:absolute;width:34%;aspect-ratio:1;border-radius:50%;background:var(--lime);right:12%;top:8%;mix-blend-mode:multiply}
+.canvas .r1{position:absolute;left:44%;right:8%;top:48%;height:9%;background:var(--ink)}
+.canvas .r2{position:absolute;left:14%;width:18%;bottom:10%;top:62%;border:2px solid var(--ink)}
+.canvas .l1{position:absolute;left:0;right:0;top:78%;height:1px;background:var(--ink)}
+.canvas .l2{position:absolute;top:0;bottom:0;left:72%;width:1px;background:var(--ink)}
+.canvas .sc{position:absolute;right:10%;bottom:8%;width:34%;stroke:var(--ink);stroke-width:2.4;fill:none}
+.label{position:absolute;left:-28px;bottom:16%;width:220px;background:var(--white);padding:16px 18px;box-shadow:0 10px 30px -15px rgba(0,0,0,.3);font-size:13px;line-height:1.45}
+.label b{display:block;font-size:15px}
+.label em{font-style:italic;color:var(--muted)}
+.label .mono{display:block;margin-top:8px;font-size:11px;color:var(--muted)}
+.score{display:flex;align-items:center;gap:14px;margin-top:28px}
+.score b{font-weight:800;font-size:56px;letter-spacing:-.05em;line-height:.9}
+.score small{display:block;color:var(--muted);font-size:14px;line-height:1.35}
+@media (max-width:960px){
+  .hero .wrap{grid-template-columns:1fr}
+  .art{justify-self:start;width:min(100%,420px)}
+  .label{position:relative;left:auto;right:auto;bottom:auto;width:auto;margin-top:12px}
+}
+
+/* ticker */
+.tick{border-block:1px solid var(--ink);overflow:hidden;padding:16px 0;background:var(--wall)}
+.tick__t{display:flex;width:max-content;animation:mq 36s linear infinite}
+.tick__t span{font-family:var(--mono);font-size:15px;text-transform:uppercase;letter-spacing:.05em;padding:0 24px;display:flex;align-items:center;gap:48px;white-space:nowrap}
+.tick__t span::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);border:1px solid var(--ink)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* exhibits */
+.exhibits{padding-block:clamp(90px,12vw,170px)}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:28px;margin-bottom:clamp(40px,6vw,76px)}
+.head .h2{margin-top:16px}
+.egrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,24px)}
+.ex{background:var(--white);padding:clamp(22px,2.2vw,32px);display:flex;flex-direction:column;gap:22px;min-height:340px;position:relative;transition:transform .6s var(--ease),box-shadow .6s}
+.ex:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(0,0,0,.3)}
+.ex .pic{flex:1;min-height:150px;background:var(--wall-2);display:grid;place-items:center;position:relative;overflow:hidden}
+.ex .pic svg{width:44%;max-width:120px;stroke:var(--ink);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:transform .8s var(--ease)}
+.ex:hover .pic svg{transform:scale(1.1) rotate(-4deg)}
+.ex .pic::after{content:"";position:absolute;width:38%;aspect-ratio:1;border-radius:50%;background:var(--lime);right:-8%;top:-12%;transition:transform .8s var(--ease)}
+.ex:hover .pic::after{transform:scale(1.4)}
+.ex .pic svg{position:relative;z-index:1}
+.ex .mono{color:var(--muted)}
+.ex h3{font-weight:700;font-size:24px;letter-spacing:-.03em;line-height:1.1;margin-top:4px}
+.ex p{color:var(--muted);font-size:15px;margin-top:6px}
+@media (max-width:960px){.egrid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.egrid{grid-template-columns:1fr}.ex{min-height:auto}}
+
+/* pricing */
+.price{background:var(--ink);color:var(--white);padding-block:clamp(90px,12vw,170px)}
+.price .lead{color:rgba(255,255,255,.6)}
+.price .mono{color:rgba(255,255,255,.55)}
+.lvl{display:inline-flex;background:rgba(255,255,255,.08);padding:5px;gap:4px;margin-bottom:30px;position:relative;flex-wrap:wrap}
+.lvl button{padding:13px 20px;font-weight:600;font-size:15px;color:rgba(255,255,255,.7);position:relative;z-index:1;transition:color .3s}
+.lvl button[aria-pressed="true"]{color:var(--ink)}
+.lvl .pill{position:absolute;top:5px;bottom:5px;left:0;width:0;background:var(--lime);transition:left .5s var(--ease),width .5s var(--ease),top .5s var(--ease)}
+.pgrid{display:grid;grid-template-columns:1fr 400px;gap:clamp(20px,3vw,48px);align-items:start}
+.plist{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(20px,3vw,40px);border-top:1px solid rgba(255,255,255,.2)}
+.svc{display:grid;grid-template-columns:24px 1fr auto;gap:14px;align-items:center;padding:20px 4px;text-align:left;border-bottom:1px solid rgba(255,255,255,.14);transition:padding .4s var(--ease),background .3s}
+.svc:hover{padding-left:12px;background:rgba(255,255,255,.04)}
+.svc .ck{width:22px;height:22px;border:1.5px solid rgba(255,255,255,.5);display:grid;place-items:center;transition:all .3s var(--ease)}
+.svc .ck::after{content:"";width:10px;height:10px;background:var(--ink);transform:scale(0);transition:transform .35s var(--ease)}
+.svc .nm{font-weight:500;font-size:17px;line-height:1.3}
+.svc .nm small{display:block;font-family:var(--mono);font-size:11.5px;color:rgba(255,255,255,.45);letter-spacing:.04em;text-transform:uppercase;margin-top:4px}
+.svc .pr{font-weight:700;font-size:20px;letter-spacing:-.02em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.svc[aria-pressed="true"] .ck{background:var(--lime);border-color:var(--lime)}
+.svc[aria-pressed="true"] .ck::after{transform:scale(1)}
+.svc[aria-pressed="true"] .pr{color:var(--lime)}
+.bill{position:sticky;top:100px;background:var(--wall);color:var(--ink);padding:28px}
+.bill .top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);padding-bottom:14px}
+.bill .mono{color:var(--muted)}
+.bill h4{font-weight:800;font-size:30px;letter-spacing:-.05em;margin:16px 0 4px}
+.bill .lv{color:var(--muted);font-size:14px}
+.b-rows{min-height:110px;padding:16px 0;border-bottom:1px dashed var(--line);display:grid;gap:9px;align-content:start}
+.b-rows div{display:flex;justify-content:space-between;gap:12px;font-size:15px;font-weight:500}
+.b-rows div span:last-child{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.b-rows .empty{color:var(--muted);justify-content:center;text-align:center;padding-top:26px;font-weight:400}
+.b-total{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0 4px}
+.b-total b{font-weight:800;font-size:50px;letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
+.b-note{font-size:13px;color:var(--muted);margin:6px 0 18px}
+.bill .btn{width:100%}
+.bill .btn+.btn{margin-top:8px}
+@media (max-width:1100px){.pgrid{grid-template-columns:1fr}.bill{position:relative;top:0;max-width:520px}}
+@media (max-width:700px){.plist{grid-template-columns:1fr}}
+
+/* team */
+.team{padding-block:clamp(90px,12vw,170px)}
+.tgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(12px,1.4vw,20px)}
+.m{background:var(--white);padding:12px 12px 20px;transition:transform .6s var(--ease)}
+.m:hover{transform:translateY(-8px)}
+.m .ph{aspect-ratio:3/4;background:var(--wall-2);position:relative;display:grid;place-items:center;overflow:hidden}
+.m .ph b{font-weight:900;font-size:clamp(70px,7vw,120px);letter-spacing:-.08em;color:var(--ink);position:relative;z-index:1}
+.m .ph::before{content:"";position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:var(--lime);transform:translate(30%,-30%);right:0;top:0;transition:transform .8s var(--ease)}
+.m:hover .ph::before{transform:translate(10%,-10%) scale(1.2)}
+.m .ph small{position:absolute;left:10px;bottom:8px;font-family:var(--mono);font-size:10.5px;text-transform:uppercase;color:var(--muted)}
+.m h3{font-weight:700;font-size:22px;letter-spacing:-.03em;margin:16px 6px 2px}
+.m .mono{margin:0 6px;font-size:11.5px;color:var(--muted)}
+.m p{font-size:14px;color:var(--muted);margin:10px 6px 0}
+@media (max-width:1200px){.tgrid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:600px){.tgrid{grid-template-columns:1fr 1fr}}
+
+/* reviews */
+.press{background:var(--lime);padding-block:clamp(90px,11vw,150px);overflow:hidden}
+.press .mono{color:rgba(13,13,13,.6)}
+.big5{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+.big5 b{font-weight:900;font-size:clamp(120px,16vw,260px);letter-spacing:-.08em;line-height:.8}
+.big5 span{font-size:clamp(18px,1.6vw,24px);font-weight:500;max-width:22ch;line-height:1.3}
+.qrow{display:flex;gap:16px;width:max-content;animation:mq 80s linear infinite;margin-top:clamp(40px,6vw,70px)}
+.press:hover .qrow{animation-play-state:paused}
+.q{width:min(440px,82vw);flex:none;background:var(--wall);padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.q blockquote{font-size:19px;font-weight:500;line-height:1.4;letter-spacing:-.01em}
+.q blockquote::before{content:"“";display:block;font-size:60px;line-height:.6;font-weight:800;margin-bottom:6px}
+.q footer{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;text-transform:uppercase;color:var(--muted)}
+
+/* contact */
+.contact{padding-top:clamp(90px,12vw,170px)}
+.cgrid{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(14px,1.6vw,24px)}
+.info{background:var(--white);padding:clamp(24px,3vw,44px);display:flex;flex-direction:column;gap:28px}
+.info dl{display:grid;gap:0}
+.info dl>div{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.info dl>div:first-child{border-top:1px solid var(--ink)}
+.info dt{font-family:var(--mono);font-size:12px;text-transform:uppercase;color:var(--muted);padding-top:5px}
+.info dd{font-weight:600;font-size:clamp(18px,1.6vw,22px);letter-spacing:-.02em}
+.info dd a:hover{background:var(--lime)}
+.info .btns{display:flex;flex-wrap:wrap;gap:8px}
+.map{position:relative;min-height:500px;overflow:hidden;background:var(--wall-2)}
+.map iframe{position:absolute;left:0;top:0;width:100%;height:calc(100% + 130px);border:0;filter:grayscale(1) contrast(1.08)}
+.map .pin{position:absolute;left:16px;top:16px;background:var(--lime);color:var(--ink);padding:10px 14px;font-weight:700;font-size:14px;box-shadow:0 0 0 1.5px var(--ink)}
+@media (max-width:900px){.cgrid{grid-template-columns:1fr}.map{min-height:380px}.info dl>div{grid-template-columns:1fr;gap:2px}}
+.footer{padding:clamp(60px,8vw,120px) 0 0;overflow:hidden}
+.fword{font-weight:900;font-size:clamp(120px,30vw,520px);letter-spacing:-.085em;line-height:.74;text-align:center;margin-left:-.04em}
+.fbar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:24px 0;border-top:1px solid var(--ink);margin-top:20px;font-size:14px;color:var(--muted)}
+
+/* mobile bill bar */
+.mbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:none;align-items:center;justify-content:space-between;gap:12px;background:var(--lime);color:var(--ink);padding:10px 10px 10px 18px;box-shadow:0 0 0 1.5px var(--ink),0 18px 40px rgba(0,0,0,.3);transform:translateY(150%);transition:transform .5s var(--ease)}
+.mbar.show{transform:none}
+.mbar small{display:block;font-family:var(--mono);font-size:11px;text-transform:uppercase}
+.mbar b{font-weight:800;font-size:24px;letter-spacing:-.04em;line-height:1}
+.mbar .btn{padding:14px 18px;font-size:15px}
+@media (max-width:1100px){.mbar{display:flex}}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo">CAST<span></span></a>
+    <nav class="nav__links">
+      <a href="#visit">Визит</a>
+      <a href="#price">Цены</a>
+      <a href="#team">Мастера</a>
+      <a href="#press">Отзывы</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <a class="btn btn--ink" href="https://n1863171.yclients.com" target="_blank" rel="noopener">Записаться</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="mono">Барбершоп · Рязань · Первомайский пр., 76</span>
+        <h1><span class="row"><span>CAST</span></span><span class="row"><span style="font-weight:300">barber</span></span></h1>
+        <div class="sub">
+          <span class="award"><i>★</i>Хорошее место 2026</span>
+          <span class="mono">Ежедневно 10:00–21:00</span>
+        </div>
+        <p class="lead">Стрижка как <span class="mark">произведение</span>. Кофе на входе, PS5 в кресле, массаж на мойке — и мастера, к которым ходят по шесть лет.</p>
+        <div class="cta" style="margin-top:30px">
+          <a class="btn btn--ink" href="https://n1863171.yclients.com" target="_blank" rel="noopener">Записаться онлайн
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a class="btn btn--line" href="#price">Посчитать визит</a>
+        </div>
+      </div>
+      <div class="art">
+        <div class="frame">
+          <div class="canvas" aria-hidden="true">
+            <span class="c1"></span><span class="c2"></span><span class="r1"></span><span class="r2"></span><span class="l1"></span><span class="l2"></span>
+            <svg class="sc" viewBox="0 0 100 100"><circle cx="22" cy="28" r="12"/><circle cx="22" cy="72" r="12"/><path d="M32 34 92 82M32 66 92 18"/></svg>
+          </div>
+        </div>
+        <div class="label">
+          <b>CAST, 2026</b>
+          <em>Мужская стрижка. Ножницы, машинка, опасная бритва.</em>
+          <span class="mono">Первомайский пр., 76 · от 1 100 ₽</span>
+        </div>
+        <div class="score"><b>5,0</b><small>★★★★★<br>159 оценок на Яндекс Картах</small></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tick" aria-hidden="true"><div class="tick__t">
+    <span>Мужская стрижка</span><span>Борода и усы</span><span>Опасное бритьё</span><span>Детские стрижки 3–10 лет</span><span>Камуфляж седины</span><span>Пилинг-детокс</span><span>Укладка</span>
+    <span>Мужская стрижка</span><span>Борода и усы</span><span>Опасное бритьё</span><span>Детские стрижки 3–10 лет</span><span>Камуфляж седины</span><span>Пилинг-детокс</span><span>Укладка</span>
+  </div></div>
+
+  <section class="exhibits wrap" id="visit">
+    <div class="head">
+      <div><span class="mono">Экспозиция</span><h2 class="h2">Визит, <i>а не</i><br>просто стрижка</h2></div>
+      <p class="lead">Шесть экспонатов, о которых гости пишут в отзывах чаще всего.</p>
+    </div>
+    <div class="egrid">
+      <article class="ex reveal"><div class="pic"><svg viewBox="0 0 64 64"><path d="M12 24h34v18a12 12 0 0 1-12 12H24a12 12 0 0 1-12-12z"/><path d="M46 28h4a6 6 0 0 1 0 12h-4"/><path d="M22 8c-2 4 2 6 0 10M30 8c-2 4 2 6 0 10M38 8c-2 4 2 6 0 10"/></svg></div><div><span class="mono">Экспонат 01</span><h3>Кофе, чай, вода</h3><p>Предлагают на входе. Детям — газировка. В дождь — горячий кофе.</p></div></article>
+      <article class="ex reveal"><div class="pic"><svg viewBox="0 0 64 64"><path d="M14 22h36a8 8 0 0 1 8 8v8a10 10 0 0 1-18 6l-2-3H26l-2 3a10 10 0 0 1-18-6v-8a8 8 0 0 1 8-8z"/><path d="M18 30v8M14 34h8"/><circle cx="44" cy="31" r="1.6"/><circle cx="49" cy="36" r="1.6"/></svg></div><div><span class="mono">Экспонат 02</span><h3>PS5 во время стрижки</h3><p>Можно поиграть, пока мастер работает. Детям тоже.</p></div></article>
+      <article class="ex reveal"><div class="pic"><svg viewBox="0 0 64 64"><path d="M10 44h44M16 44V30a6 6 0 0 1 6-6h20a6 6 0 0 1 6 6v14"/><path d="M22 24v-8a10 10 0 0 1 20 0v8"/><path d="M24 34c2 2 4 2 6 0s4-2 6 0 4 2 6 0"/><path d="M18 44v8M46 44v8"/></svg></div><div><span class="mono">Экспонат 03</span><h3>Массаж на мойке</h3><p>Кресло с массажем, пока моют голову. Гости отмечают отдельно.</p></div></article>
+      <article class="ex reveal"><div class="pic"><svg viewBox="0 0 64 64"><rect x="10" y="10" width="44" height="44"/><circle cx="26" cy="28" r="7"/><path d="M10 46l14-10 10 8 8-6 12 10"/></svg></div><div><span class="mono">Экспонат 04</span><h3>Картины и книги</h3><p>Минималистичный интерьер с современным искусством и зоной ожидания.</p></div></article>
+      <article class="ex reveal"><div class="pic"><svg viewBox="0 0 64 64"><circle cx="32" cy="20" r="9"/><path d="M18 54c0-10 6-18 14-18s14 8 14 18"/><path d="M26 18c2-4 10-4 12 0"/></svg></div><div><span class="mono">Экспонат 05</span><h3>Детские стрижки</h3><p>От 3 до 10 лет. Мастера находят общий язык с самыми маленькими.</p></div></article>
+      <article class="ex reveal"><div class="pic"><svg viewBox="0 0 64 64"><path d="M14 30l-4-12 10 6M50 30l4-12-10 6"/><path d="M14 30c0 14 8 22 18 22s18-8 18-22c0-6-8-10-18-10s-18 4-18 10z"/><circle cx="25" cy="34" r="1.6"/><circle cx="39" cy="34" r="1.6"/><path d="M29 42h6l-3 3z"/></svg></div><div><span class="mono">Экспонат 06</span><h3>Можно с собакой</h3><p>Пускаем с питомцами. Есть парковка, пандус и оплата картой.</p></div></article>
+    </div>
+  </section>
+
+  <section class="price" id="price">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="mono">Прайс · калькулятор</span><h2 class="h2">Соберите<br><i>свой визит</i></h2></div>
+        <p class="lead">Выберите уровень мастера и отметьте услуги — сколько угодно. Итог посчитается сразу.</p>
+      </div>
+      <div class="lvl" id="lvl" role="group" aria-label="Уровень мастера">
+        <span class="pill"></span>
+        <button data-l="0" aria-pressed="true">Мастер</button>
+        <button data-l="1" aria-pressed="false">Старший мастер</button>
+        <button data-l="2" aria-pressed="false">Ведущий мастер</button>
+      </div>
+      <div class="pgrid">
+        <div class="plist" id="plist"></div>
+        <aside class="bill" aria-live="polite">
+          <div class="top"><span class="mono">Ваш визит</span><span class="mono" id="bDate"></span></div>
+          <h4>CAST<span style="color:var(--muted);font-weight:300"> barber</span></h4>
+          <div class="lv" id="bLvl">Мастер</div>
+          <div class="b-rows" id="bRows"></div>
+          <div class="b-total"><span class="mono">Итого</span><b id="bTotal">0 ₽</b></div>
+          <p class="b-note">Предварительно, не публичная оферта. Актуальные цены — при записи.</p>
+          <a class="btn btn--ink" href="https://n1863171.yclients.com" target="_blank" rel="noopener">Записаться онлайн</a>
+          <a class="btn btn--line" href="tel:+74912510050">+7 (4912) 51-00-50</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="team wrap" id="team">
+    <div class="head">
+      <div><span class="mono">Мастера</span><h2 class="h2">Авторы<br><i>работ</i></h2></div>
+      <p class="lead">Имена, которые гости называют в отзывах. К некоторым ходят по пять–шесть лет.</p>
+    </div>
+    <div class="tgrid">
+      <article class="m reveal"><div class="ph"><b>М</b><small>фото мастера</small></div><h3>Максим</h3><span class="mono">к нему ходят 5–6 лет</span><p>Быстро понимает, чего хочет клиент, и подскажет с укладкой.</p></article>
+      <article class="m reveal"><div class="ph"><b>Д</b><small>фото мастера</small></div><h3>Даниил</h3><span class="mono">многолетний стаж</span><p>Находит общий язык и со взрослыми, и с детьми.</p></article>
+      <article class="m reveal"><div class="ph"><b>Д</b><small>фото мастера</small></div><h3>Давид</h3><span class="mono">старший мастер</span><p>Чётко понимает желаемый результат. Чёткая работа.</p></article>
+      <article class="m reveal"><div class="ph"><b>В</b><small>фото мастера</small></div><h3>Виталий</h3><span class="mono">внимание к деталям</span><p>Даст экспертный совет по стрижке и уходу.</p></article>
+      <article class="m reveal"><div class="ph"><b>Д</b><small>фото мастера</small></div><h3>Дмитрий</h3><span class="mono">современные формы</span><p>Подскажет форму стрижки и как ухаживать дома.</p></article>
+      <article class="m reveal"><div class="ph"><b>А</b><small>фото мастера</small></div><h3>Артём</h3><span class="mono">борода и детские</span><p>Аккуратная окантовка бороды и стильные детские стрижки.</p></article>
+    </div>
+  </section>
+
+  <section class="press" id="press">
+    <div class="wrap">
+      <span class="mono">Отзывы · Яндекс Карты</span>
+      <div class="big5" style="margin-top:20px"><b>5,0</b><span>средняя оценка по 159 голосам. «Хорошее место 2026».</span></div>
+    </div>
+    <div class="qrow" id="qrow"></div>
+  </section>
+
+  <section class="contact wrap" id="contact">
+    <div class="head">
+      <div><span class="mono">Контакты</span><h2 class="h2">Открыто<br><i>каждый день</i></h2></div>
+    </div>
+    <div class="cgrid">
+      <div class="info">
+        <dl>
+          <div><dt>Адрес</dt><dd>Рязань, Первомайский проспект, 76</dd></div>
+          <div><dt>Телефон</dt><dd><a href="tel:+74912510050">+7 (4912) 51-00-50</a></dd></div>
+          <div><dt>Часы</dt><dd>Ежедневно 10:00–21:00</dd></div>
+          <div><dt>Удобства</dt><dd style="font-weight:500;font-size:16px;letter-spacing:0">Парковка · пандус · оплата картой · можно с собакой · подарочные сертификаты</dd></div>
+        </dl>
+        <div class="btns">
+          <a class="btn btn--ink" href="https://n1863171.yclients.com" target="_blank" rel="noopener">Записаться онлайн</a>
+          <a class="btn btn--line" href="https://t.me/cast_barbershop" target="_blank" rel="noopener">Telegram</a>
+          <a class="btn btn--line" href="https://vk.com/castbarbershoprzn" target="_blank" rel="noopener">ВКонтакте</a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe title="Карта: Рязань, Первомайский проспект 76" loading="lazy" src="https://yandex.ru/map-widget/v1/?ll=39.707080%2C54.630436&amp;pt=39.707080%2C54.630436%2Cpm2blm&amp;z=17"></iframe>
+        <span class="pin">CAST · Первомайский, 76</span>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="fword" aria-hidden="true">CAST</div>
+      <div class="fbar"><span>© CAST barbershop, Рязань</span><span>Цены на сайте не являются публичной офертой</span></div>
+    </footer>
+  </section>
+</main>
+
+<div class="mbar" id="mbar"><div><small id="mCount">0 услуг</small><b id="mTotal">0 ₽</b></div><a class="btn btn--ink" href="https://n1863171.yclients.com" target="_blank" rel="noopener">Записаться</a></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(() => {
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fmt = n => n.toLocaleString('ru-RU').replace(/ /g,' ') + ' ₽';
+
+/* nav */
+const nav=document.getElementById('nav');
+const onScroll=()=>nav.classList.toggle('solid',scrollY>30);
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* pricing: [name, note, [мастер, старший, ведущий]] */
+const SVC=[
+  ['Мужская стрижка','с мытьём и укладкой',[1900,2100,2300]],
+  ['Стрижка + борода / усы','комплекс',[2900,3200,3400]],
+  ['Стрижка машинкой','',[1100,1200,1300]],
+  ['Машинка + борода / усы','комплекс',[2000,2200,2300]],
+  ['Стрижка бороды / усов','',[1200,1300,1400]],
+  ['Опасное бритьё','',[1200,1300,1400]],
+  ['Детская стрижка','от 3 до 10 лет',[1400,1600,1700]],
+  ['Камуфляж седины','',[1100,1200,1300]],
+  ['Пилинг — детокс головы','',[700,700,800]],
+  ['Укладка','',[700,700,700]],
+  ['Удаление волос воском','',[400,400,400]]
+];
+const LV=['Мастер','Старший мастер','Ведущий мастер'];
+let level=0; const sel=new Set();
+const $list=document.getElementById('plist');
+$list.innerHTML=SVC.map(([n,note],i)=>`<button class="svc" data-i="${i}" aria-pressed="false"><span class="ck"></span><span class="nm">${n}${note?`<small>${note}</small>`:''}</span><span class="pr" data-p="${i}"></span></button>`).join('');
+const $rows=document.getElementById('bRows'),$tot=document.getElementById('bTotal');
+let shown=0;
+function tween(el,from,to){
+  if(window.gsap&&!reduce){const o={v:from};gsap.to(o,{v:to,duration:.5,ease:'power3.out',onUpdate:()=>el.textContent=fmt(Math.round(o.v))});}
+  else el.textContent=fmt(to);
+}
+function renderPrices(prev){
+  $list.querySelectorAll('.pr').forEach(el=>{const i=+el.dataset.p;tween(el,prev==null?SVC[i][2][level]:SVC[i][2][prev],SVC[i][2][level]);});
+}
+function render(){
+  const list=[...sel].sort((a,b)=>a-b);
+  const total=list.reduce((s,i)=>s+SVC[i][2][level],0);
+  $rows.innerHTML=list.length?list.map(i=>`<div><span>${SVC[i][0]}</span><span>${fmt(SVC[i][2][level])}</span></div>`).join('')
+    :`<div class="empty">Отметьте услуги слева —<br>они появятся здесь</div>`;
+  tween($tot,shown,total);shown=total;
+  document.getElementById('bLvl').textContent=LV[level];
+  const n=list.length;
+  document.getElementById('mbar').classList.toggle('show',n>0);
+  document.getElementById('mCount').textContent=`${n} ${n%10===1&&n%100!==11?'услуга':(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?'услуги':'услуг')} · ${LV[level].toLowerCase()}`;
+  document.getElementById('mTotal').textContent=fmt(total);
+}
+$list.addEventListener('click',e=>{const b=e.target.closest('.svc');if(!b)return;const i=+b.dataset.i;sel.has(i)?sel.delete(i):sel.add(i);b.setAttribute('aria-pressed',sel.has(i));render();});
+const $lvl=document.getElementById('lvl'),$pill=$lvl.querySelector('.pill');
+function movePill(){const b=$lvl.querySelector('[aria-pressed="true"]');$pill.style.left=b.offsetLeft+'px';$pill.style.width=b.offsetWidth+'px';$pill.style.top=b.offsetTop+'px';$pill.style.bottom='auto';$pill.style.height=b.offsetHeight+'px';}
+$lvl.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const prev=level;level=+b.dataset.l;
+  $lvl.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));movePill();renderPrices(prev);render();});
+addEventListener('resize',movePill);
+document.fonts?.ready.then(movePill);movePill();
+renderPrices();render();
+document.getElementById('bDate').textContent=new Date().toLocaleDateString('ru-RU');
+
+/* reviews */
+const Q=[
+  ['Даниил','Администратор сразу предложил напитки, а во время стрижки можно поиграть в PS5. Именно то место, куда хочется ходить постоянно.'],
+  ['Михаил','Стильный минималистичный интерьер с современным искусством. Максим быстро понял, чего я хочу, и подсказал с укладкой.'],
+  ['Андрей','Стригусь у Виталия. Кресло с массажем на мойке, бесплатные напитки, уход за лицом и волосами.'],
+  ['Сергей','Стригусь у Максима уже пять-шесть лет.'],
+  ['Ирина','Даниил отлично нашёл общий язык с ребёнком — стрижка понравилась.'],
+  ['Андрей Д.','Хожу к Даниилу около шести лет. Отдельно — кресло с массажем.'],
+  ['Артём','Пошёл ливень — предложили кофе. Лучший барбершоп из всех, где я был.'],
+  ['Алексей И.','Старший мастер Давид. Стильное место, кофе, цена оправдана.'],
+  ['Ольга','Просторно, светлый зал, удобная зона отдыха и дружелюбный ресепшен.']
+];
+const card=([n,t])=>`<figure class="q"><blockquote>${t}</blockquote><footer><span>${n}</span><span>★★★★★ · Яндекс</span></footer></figure>`;
+const qs=Q.map(card).join('');document.getElementById('qrow').innerHTML=qs+qs;
+
+/* motion */
+if(!window.gsap||reduce) return;
+gsap.registerPlugin(ScrollTrigger);
+gsap.from('.hero h1 .row>span',{yPercent:110,duration:1.3,ease:'expo.out',stagger:.12});
+gsap.from('.hero .mono, .hero .sub, .hero .lead, .hero .cta',{y:24,opacity:0,duration:1,ease:'expo.out',stagger:.07,delay:.3});
+gsap.from('.frame',{y:60,rotate:2,opacity:0,duration:1.4,ease:'expo.out',delay:.2});
+gsap.from('.canvas > *',{scale:0,opacity:0,duration:1.1,ease:'expo.out',stagger:.08,delay:.6});
+gsap.from('.label, .score',{x:-30,opacity:0,duration:1,ease:'expo.out',stagger:.1,delay:.9});
+gsap.to('.canvas .c1',{xPercent:12,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+gsap.to('.canvas .c2',{yPercent:40,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+gsap.utils.toArray('.reveal').forEach((el,i)=>gsap.from(el,{y:60,opacity:0,duration:1,ease:'expo.out',delay:(i%3)*.08,scrollTrigger:{trigger:el,start:'top 92%'}}));
+gsap.utils.toArray('.h2').forEach(h=>gsap.from(h,{y:50,opacity:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:h,start:'top 90%'}}));
+gsap.from('.big5 b',{yPercent:30,opacity:0,duration:1.2,ease:'expo.out',scrollTrigger:{trigger:'.big5',start:'top 85%'}});
+gsap.from('.fword',{yPercent:40,opacity:0,ease:'none',scrollTrigger:{trigger:'.footer',start:'top bottom',end:'bottom bottom',scrub:true}});
+})();
+</script>
+</body>
+</html>
