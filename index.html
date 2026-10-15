@@ -6,9 +6,7 @@
 <title>CAST — барбершоп в Рязани</title>
 <meta name="description" content="Барбершоп CAST в Рязани: мужские и детские стрижки, борода, опасное бритьё. Первомайский проспект, 76. Ежедневно 10:00–21:00. Рейтинг 5,0 на Яндекс Картах.">
 <meta name="theme-color" content="#f3f2ee">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="fonts/fonts.css" rel="stylesheet">
 <style>
 :root{
   --wall:#f3f2ee; --wall-2:#e9e7e1; --white:#fff;
@@ -246,13 +244,13 @@ svg{display:block}
         <div class="frame">
           <div class="canvas" aria-hidden="true">
             <span class="c1"></span><span class="c2"></span><span class="r1"></span><span class="r2"></span><span class="l1"></span><span class="l2"></span>
-            <svg class="sc" viewBox="0 0 100 100"><circle cx="22" cy="28" r="12"/><circle cx="22" cy="72" r="12"/><path d="M32 34 92 82M32 66 92 18"/></svg>
+            <svg class="sc" viewBox="0 0 100 100"><circle cx="22" cy="28" r="12"/><circle cx="22" cy="72" r="12"/><path d="M32 34 92 82M32 66 92 18"/></svg>
           </div>
         </div>
         <div class="label">
           <b>CAST, 2026</b>
           <em>Мужская стрижка. Ножницы, машинка, опасная бритва.</em>
-          <span class="mono">Первомайский пр., 76 · от 1 100 ₽</span>
+          <span class="mono">Первомайский пр., 76 · от 1 100 ₽</span>
         </div>
         <div class="score"><b>5,0</b><small>★★★★★<br>159 оценок на Яндекс Картах</small></div>
       </div>
@@ -274,7 +272,7 @@ svg{display:block}
       <article class="ex reveal"><div class="pic"><svg viewBox="0 0 64 64"><path d="M14 22h36a8 8 0 0 1 8 8v8a10 10 0 0 1-18 6l-2-3H26l-2 3a10 10 0 0 1-18-6v-8a8 8 0 0 1 8-8z"/><path d="M18 30v8M14 34h8"/><circle cx="44" cy="31" r="1.6"/><circle cx="49" cy="36" r="1.6"/></svg></div><div><span class="mono">Экспонат 02</span><h3>PS5 во время стрижки</h3><p>Можно поиграть, пока мастер работает. Детям тоже.</p></div></article>
       <article class="ex reveal"><div class="pic"><svg viewBox="0 0 64 64"><path d="M10 44h44M16 44V30a6 6 0 0 1 6-6h20a6 6 0 0 1 6 6v14"/><path d="M22 24v-8a10 10 0 0 1 20 0v8"/><path d="M24 34c2 2 4 2 6 0s4-2 6 0 4 2 6 0"/><path d="M18 44v8M46 44v8"/></svg></div><div><span class="mono">Экспонат 03</span><h3>Массаж на мойке</h3><p>Кресло с массажем, пока моют голову. Гости отмечают отдельно.</p></div></article>
       <article class="ex reveal"><div class="pic"><svg viewBox="0 0 64 64"><rect x="10" y="10" width="44" height="44"/><circle cx="26" cy="28" r="7"/><path d="M10 46l14-10 10 8 8-6 12 10"/></svg></div><div><span class="mono">Экспонат 04</span><h3>Картины и книги</h3><p>Минималистичный интерьер с современным искусством и зоной ожидания.</p></div></article>
-      <article class="ex reveal"><div class="pic"><svg viewBox="0 0 64 64"><circle cx="32" cy="20" r="9"/><path d="M18 54c0-10 6-18 14-18s14 8 14 18"/><path d="M26 18c2-4 10-4 12 0"/></svg></div><div><span class="mono">Экспонат 05</span><h3>Детские стрижки</h3><p>От 3 до 10 лет. Мастера находят общий язык с самыми маленькими.</p></div></article>
+      <article class="ex reveal"><div class="pic"><svg viewBox="0 0 64 64"><circle cx="32" cy="20" r="9"/><path d="M18 54c0-10 6-18 14-18s14 8 14 18"/><path d="M26 18c2-4 10-4 12 0"/></svg></div><div><span class="mono">Экспонат 05</span><h3>Детские стрижки</h3><p>От 3 до 10 лет. Мастера находят общий язык с самыми маленькими.</p></div></article>
       <article class="ex reveal"><div class="pic"><svg viewBox="0 0 64 64"><path d="M14 30l-4-12 10 6M50 30l4-12-10 6"/><path d="M14 30c0 14 8 22 18 22s18-8 18-22c0-6-8-10-18-10s-18 4-18 10z"/><circle cx="25" cy="34" r="1.6"/><circle cx="39" cy="34" r="1.6"/><path d="M29 42h6l-3 3z"/></svg></div><div><span class="mono">Экспонат 06</span><h3>Можно с собакой</h3><p>Пускаем с питомцами. Есть парковка, пандус и оплата картой.</p></div></article>
     </div>
   </section>
@@ -298,7 +296,7 @@ svg{display:block}
           <h4>CAST<span style="color:var(--muted);font-weight:300"> barber</span></h4>
           <div class="lv" id="bLvl">Мастер</div>
           <div class="b-rows" id="bRows"></div>
-          <div class="b-total"><span class="mono">Итого</span><b id="bTotal">0 ₽</b></div>
+          <div class="b-total"><span class="mono">Итого</span><b id="bTotal">0 ₽</b></div>
           <p class="b-note">Предварительно, не публичная оферта. Актуальные цены — при записи.</p>
           <a class="btn btn--ink" href="https://n1863171.yclients.com" target="_blank" rel="noopener">Записаться онлайн</a>
           <a class="btn btn--line" href="tel:+74912510050">+7 (4912) 51-00-50</a>
@@ -360,14 +358,14 @@ svg{display:block}
   </section>
 </main>
 
-<div class="mbar" id="mbar"><div><small id="mCount">0 услуг</small><b id="mTotal">0 ₽</b></div><a class="btn btn--ink" href="https://n1863171.yclients.com" target="_blank" rel="noopener">Записаться</a></div>
+<div class="mbar" id="mbar"><div><small id="mCount">0 услуг</small><b id="mTotal">0 ₽</b></div><a class="btn btn--ink" href="https://n1863171.yclients.com" target="_blank" rel="noopener">Записаться</a></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/gsap.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
 <script>
 (() => {
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const fmt = n => n.toLocaleString('ru-RU').replace(/ /g,' ') + ' ₽';
+const fmt = n => n.toLocaleString('ru-RU').replace(/\s/g,' ') + ' ₽';
 
 /* nav */
 const nav=document.getElementById('nav');
@@ -382,7 +380,7 @@ const SVC=[
   ['Машинка + борода / усы','комплекс',[2000,2200,2300]],
   ['Стрижка бороды / усов','',[1200,1300,1400]],
   ['Опасное бритьё','',[1200,1300,1400]],
-  ['Детская стрижка','от 3 до 10 лет',[1400,1600,1700]],
+  ['Детская стрижка','от 3 до 10 лет',[1400,1600,1700]],
   ['Камуфляж седины','',[1100,1200,1300]],
   ['Пилинг — детокс головы','',[700,700,800]],
   ['Укладка','',[700,700,700]],
